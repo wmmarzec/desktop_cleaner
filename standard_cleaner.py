@@ -16,7 +16,6 @@ if not os.path.exists(cleanup_dir):
     print ("Creating folder " + last_part[1] + "...")
 
 all_files = os.listdir(desktop_dir)
-print(all_files)
 
 for file in all_files:
     if file != __file__ and file != last_part[1] and file!= "standard_cleaner.bat":
