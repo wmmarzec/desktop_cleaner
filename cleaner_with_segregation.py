@@ -18,33 +18,33 @@ def get_necessary_dir(new_directories, file):
 def get_dir_name (ext):
     print(ext)
     dir_type = ""
-    if ext == "bmp" or "gif" or "ico" or "jpeg" or "jpg" or "png" or "raw" or "tif" or "tiff" or "eps" or "psd":
+    if ext == "bmp" or ext == "gif" or ext == "ico" or ext == "jpeg" or ext == "jpg" or ext == "png" or ext == "raw" or ext == "tif" or ext == "tiff" or ext == "eps" or ext == "psd":
         dir_type = "Images"
-    elif ext == "doc" or "docx" or "odt" or "pages" or "rtf" or "txt" or "wpd" or "wps":
+    elif ext == "doc" or ext == "docx" or ext == "odt" or ext == "pages" or ext == "rtf" or ext ==  "txt" or ext ==  "wpd" or ext == "wps":
         dir_type = "Texts"
-    elif ext == "aif" or "mp3" or "wav" or "wma":
+    elif ext == "aif" or ext == "mp3" or ext == "wav" or ext == "wma":
         dir_type = "Music"
-    elif ext == "mov" or "mp4" or "mpg" or "wmv":
+    elif ext == "mov" or ext == "mp4" or ext == "mpg" or ext == "wmv":
         dir_type = "Videos"
-    elif ext == "csv" or "numbers" or "ods" or "xls" or "xlsx":
+    elif ext == "csv" or ext == "numbers" or ext ==  "ods" or ext == "xls" or ext == "xlsx":
         dir_type = "Spreadsheets"   
-    elif ext == "asp" or "aspx" or "css" or "htm" or "html" or "jsp" or "php" or "vsdx":
+    elif ext == "asp" or ext == "aspx" or ext == "css" or ext == "htm" or ext == "html" or ext ==  "jsp" or ext ==  "php" or ext ==  "vsdx":
         dir_type = "Web_files"   
-    elif ext == "bak" or "cfg" or "conf" or "ini" or "msi" or "sys" or "tmp":
+    elif ext == "bak" or ext ==  "cfg" or ext ==  "conf" or ext ==  "ini" or  ext ==  "msi" or ext ==  "sys" or ext ==  "tmp":
         dir_type = "System_files"
-    elif ext == "7z" or "rar" or "tar" or "gz" or "zip":
+    elif ext == "7z" or ext == "rar" or ext ==  "tar" or ext ==  "gz" or ext == "zip":
         dir_type = "Compression_files"
-    elif ext == "ink" or "url":
+    elif ext == "ink" or ext ==  "url":
         dir_type = "Shortcuts"
-    elif ext == "app" or "bat" or "bin" or "cmd" or "com" or "exe" or "vbs" or "x86":
+    elif ext == "app" or ext ==  "bat" or ext ==  "bin" or ext == "cmd" or ext == "com" or ext == "exe" or ext == "vbs" or ext == "x86":
         dir_type = "Executable_files"
-    elif ext == "afpub" or "indd" or "pdfxml" or "pmd" or "pub" or "qxp":
+    elif ext == "afpub" or ext == "indd" or ext == "pdfxml" or ext == "pmd" or ext == "pub" or ext == "qxp":
         dir_type = "Page_layouts" 
-    elif ext == "afdesign" or "ai" or "cad" or "cdr" or "drw" or "dwg" or "eps" or "odg" or "svg" or "vsdx":
+    elif ext == "afdesign" or ext == "ai" or ext == "cad" or ext == "cdr" or ext ==  "drw" or ext ==  "dwg" or ext == "eps" or ext == "odg" or ext ==  "svg" or ext ==  "vsdx":
         dir_type = "Draw_files" 
-    elif ext == "c" or "cpp" or "cs" or "css" or "java" or "js" or "json" or "py" or "sql" or "swift" or "vb":
+    elif ext == "c" or ext == "cpp" or ext == "cs" or ext == "css" or ext == "java" or ext == "js" or ext == "json" or ext == "py" or ext == "sql" or ext == "swift" or ext == "vb":
         dir_type = "Programming_files" 
-    elif ext == "pptx" or "ppt" or "pptm" or "pptx" or "odp":
+    elif ext == "pptx" or ext == "ppt" or ext == "pptm" or ext == "pptx" or ext == "odp":
         dir_type = "Presentations" 
     else:
         dir_type = "Others"
@@ -68,5 +68,5 @@ for file in all_files:
         ext = file_splitted[len(file_splitted)-1]        
         cleanup_dir_name = get_dir_name (ext)
         cleanup_dir = create_dir(cleanup_dir_name)
-        #shutil.move(file_dir, cleanup_dir)
-        #print ("Moving file " + file + "...")
+        shutil.move(file_dir, cleanup_dir)
+        print ("Moving file " + file + "...")
