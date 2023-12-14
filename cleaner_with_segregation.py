@@ -34,7 +34,7 @@ def get_dir_name (ext):
         dir_type = "System_files"
     elif ext == "7z" or ext == "rar" or ext ==  "tar" or ext ==  "gz" or ext == "zip":
         dir_type = "Compression_files"
-    elif ext == "ink" or ext ==  "url":
+    elif ext == "lnk" or ext ==  "url":
         dir_type = "Shortcuts"
     elif ext == "app" or ext ==  "bat" or ext ==  "bin" or ext == "cmd" or ext == "com" or ext == "exe" or ext == "vbs" or ext == "x86":
         dir_type = "Executable_files"
