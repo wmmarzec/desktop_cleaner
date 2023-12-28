@@ -1,0 +1,8 @@
+doc
+docx
+odt
+pages
+rtf
+txt
+wpd
+wps

@@ -1,0 +1,7 @@
+bak
+cfg
+conf
+ini
+msi
+sys
+tmp

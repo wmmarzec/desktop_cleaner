@@ -1,0 +1,8 @@
+app
+bat
+bin
+cmd
+com
+exe
+vbs
+x86

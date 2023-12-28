@@ -1,0 +1,6 @@
+afpub
+indd
+pdfxml
+pmd
+pub
+qxp

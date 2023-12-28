@@ -1,0 +1,10 @@
+afdesign
+ai
+cad
+cdr
+drw
+dwg
+eps
+odg
+svg
+vsdx

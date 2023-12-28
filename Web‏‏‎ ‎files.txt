@@ -1,0 +1,8 @@
+asp
+aspx
+css
+htm
+html
+jsp
+php
+vsdx
