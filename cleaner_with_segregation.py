@@ -15,20 +15,22 @@ def get_necessary_dir(new_directories, file):
             necessary_dir = i
     return necessary_dir
 
-def get_list (file):
-    my_file = open(file, "r") 
-    data = my_file.read() 
-    data_into_list = data.replace('\n', ' ').split(".") 
-    return data_into_list
+def get_list (text):
+    lines = []
+    with open(text) as file:
+        for line in file: 
+            line = line.strip()
+            lines.append(line) 
+    return lines
 
 def get_dir_name (ext):
     dir_type = ""
 
-    files = [r"Compression‏‏‎ ‎files.txt", r"Draw‏‏‎ ‎files.txt", r"Executable‏‏‎ ‎files", r"Images.txt", r"Music.txt", r"Page‏‏‎ ‎layouts.txt", r"Presentations.txt", r"Programming‏‏‎ ‎files.txt", r"Shortcuts.txt", r"Spreadsheets.txt", r"System‏‏‎ ‎files.txt", r"Texts.txt", r"Videos.txt", r"Web‏‏‎ ‎files.txt",]
+    files = [r"Compression‏‏‎ files.txt", r"Draw‏‏‎ ‎files.txt", r"Executable‏‏‎ ‎files.txt", r"Images.txt", r"Music.txt", r"Page‏‏‎ ‎layouts.txt", r"Presentations.txt", r"Programming ‎files.txt", r"Shortcuts.txt", r"Spreadsheets.txt", r"System‏‏‎ files.txt", r"Texts.txt", r"Videos.txt", r"Web‏‏‎ ‎files.txt",]
     for notepad in files:
         list = get_list(notepad)
         for extension in list:
-            if extension == ext:
+            if str(extension) == str(ext):
                 notepad.split(".")
                 dir_type = notepad[0]
         else:
