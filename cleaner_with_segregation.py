@@ -5,7 +5,7 @@ def create_dir(cleanup_dir_name):
     if not os.path.exists(cleanup_dir_name): 
         last_part = cleanup_dir_name.split("/")
         print ("Creating folder " + last_part[1] + "...")
-        #os.makedirs(cleanup_dir_name)
+        os.makedirs(cleanup_dir_name)
     return cleanup_dir_name
 
 def get_necessary_dir(new_directories, file):
@@ -24,25 +24,22 @@ def get_list (text):
     return lines
 
 def get_dir_name (ext):
-    dir_type = ""
+    dir_type = "Others"
 
     files = [r"Compression‏‏‎ files.txt", r"Draw‏‏‎ ‎files.txt", r"Executable‏‏‎ ‎files.txt", r"Images.txt", r"Music.txt", r"Page‏‏‎ ‎layouts.txt", r"Presentations.txt", r"Programming ‎files.txt", r"Shortcuts.txt", r"Spreadsheets.txt", r"System‏‏‎ files.txt", r"Texts.txt", r"Videos.txt", r"Web‏‏‎ ‎files.txt",]
     for notepad in files:
         list = get_list(notepad)
         for extension in list:
-            if str(extension) == str(ext):
-                notepad.split(".")
-                dir_type = notepad[0]
-        else:
-            dir_type = "Others"
+            if extension == ext:
+                type = notepad.split(".")
+                dir_type = str(type[0])
     
     dir_name = desktop_dir + "/" + dir_type
     new_directories.append(dir_type)
     return dir_name
 
-
-
-desktop_dir = r"C:\Users\wikto\OneDrive\Pulpit"
+with open("Desktop directory.txt") as f:
+    desktop_dir = f.read()
 
 all_files = os.listdir(desktop_dir)
 new_directories = []
@@ -55,5 +52,5 @@ for file in all_files:
         ext = file_splitted[len(file_splitted)-1]        
         cleanup_dir_name = get_dir_name (ext)
         cleanup_dir = create_dir(cleanup_dir_name)
-        #shutil.move(file_dir, cleanup_dir)
+        shutil.move(file_dir, cleanup_dir)
         print ("Moving file " + file + "...")
